@@ -157,6 +157,12 @@ public class RaceEventsListener implements Listener {
 			}
 			
 			Minecart car = (Minecart) player.getVehicle();
+			if (car == null) {
+				//Invalid state, kick the player out of the race
+				User u = r.getUser(player.getName());
+				r.leave(u, true);
+				return;
+			}
 			plugin.raceMethods.playerRespawn(player,car);
 			
 			for (PotionEffect effect : player.getActivePotionEffects()) {
@@ -493,8 +499,12 @@ public class RaceEventsListener implements Listener {
 				e = e.getVehicle();
 			}
 			for(Entity e1:stack){
-				e1.eject();
-				e1.remove();
+				try {
+					e1.eject();
+					e1.remove();
+				} catch (ArrayIndexOutOfBoundsException exception) {
+					//Skip
+				}
 			}
 		}
 		return;
