@@ -1,12 +1,6 @@
 package net.stormdev.mario.queues;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 import net.stormdev.mario.mariokart.MarioKart;
 import net.stormdev.mario.races.RaceType;
@@ -22,7 +16,7 @@ public class RaceQueueManager {
 		if (trackQueues.size() < 1) {
 			return false;
 		}
-		Set<UUID> keys = Set.copyOf(trackQueues.keySet());
+		Set<UUID> keys = new HashSet<>(trackQueues.keySet());
 		for (UUID key : keys) {
 			RaceQueue r = trackQueues.get(key);
 			if (r.getRaceMode() == raceMode || raceMode.equals(RaceType.AUTO)) {
@@ -37,7 +31,7 @@ public class RaceQueueManager {
 		if (trackQueues.size() < 1) {
 			return null;
 		}
-		Set<UUID> keys = Set.copyOf(trackQueues.keySet());
+		Set<UUID> keys = new HashSet<>(trackQueues.keySet());
 		for (UUID key : keys) {
 			RaceQueue r = trackQueues.get(key);
 			if (r.getRaceMode() == raceMode || raceMode.equals(RaceType.AUTO)) {
@@ -52,7 +46,7 @@ public class RaceQueueManager {
 		if (trackQueues.size() < 1) {
 			return null;
 		}
-		Set<UUID> keys = Set.copyOf(trackQueues.keySet());
+		Set<UUID> keys = new HashSet<>(trackQueues.keySet());
 		for (UUID key : keys) {
 			RaceQueue r = trackQueues.get(key);
 			if (r.getQueueId().equals(queueId)) {
@@ -98,7 +92,7 @@ public class RaceQueueManager {
 		if (MarioKart.plugin.queues.containsKey(trackName)) {
 			trackQueues.putAll(MarioKart.plugin.queues.get(trackName));
 		}
-		Set<UUID> keys = Set.copyOf(trackQueues.keySet());
+		Set<UUID> keys = new HashSet<>(trackQueues.keySet());
 		for(UUID id : keys){
 			RaceQueue q = trackQueues.get(id);
 			if(q.getRaceMode() != type && type != RaceType.AUTO){

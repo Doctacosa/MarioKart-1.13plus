@@ -387,7 +387,7 @@ public class AdminCommandExecutor implements CommandExecutor {
 				sender.sendMessage(ChatColor.YELLOW+"Toggled full server: "+toggle);
 				return true;
 			} else if (command.equalsIgnoreCase("item")) {
-				if(player.isInsideVehicle()) {
+				if(player.isInsideVehicle() && args.length>=2) {
 					ItemStack give = MarioKart.powerupManager.getPowerup(args[1]);
 					
 					if(give == null) {

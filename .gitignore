@@ -5,8 +5,11 @@
 *.war
 *.ear
 
+.idea
 .classpath
 .project
 /bin
 /target
 dependency-reduced-pom.xml
+*.iml
+*.bak
