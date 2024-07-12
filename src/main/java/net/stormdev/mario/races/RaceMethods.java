@@ -75,7 +75,7 @@ public class RaceMethods {
 		car.remove();
 		
 		final Race race = plugin.raceMethods.inAGame(player, false);
-		User u = race.updateUser(player);				
+		User u = race.getUser(player);
 		int checkpoint = u.getCheckpoint();
 		//race.updateUser(u);				
 		Location toTele = race.getTrack().getCheckpoint(checkpoint)
@@ -94,8 +94,7 @@ public class RaceMethods {
 		plugin.getServer().getPluginManager().callEvent(evnt);
 		if(evnt.isCancelled()){
 			car.remove();
-		}
-		else{
+		} else {
 			final Vehicle ucar = car;
 			Bukkit.getScheduler().runTaskLater(plugin, new Runnable(){
 				@Override
@@ -116,14 +115,15 @@ public class RaceMethods {
 		
 		player.setScoreboard(race.board);
 		player.setMetadata("car.stayIn", new StatValue(null, MarioKart.plugin));
-		
+
+		/*
 		Bukkit.getScheduler().runTaskAsynchronously(MarioKart.plugin, new Runnable(){
 
 			@Override
 			public void run() {
 				MarioKart.plugin.raceScheduler.updateRace(race);
 				return;
-			}});
+			}}); */
 	}
 	
 	public void createExplode(final Location loc, final int size){

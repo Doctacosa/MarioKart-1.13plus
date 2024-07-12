@@ -431,7 +431,7 @@ public class RaceExecutor {
 							 * player.sendMessage(main.colors.getError
 							 * ()+main.msgs.get("race.mid.miss")); return; }
 							 */
-							if (!(old >= ch)) {
+							if (old < ch && ch <= old+2) { //You can miss one checkpoint
 								user.setCheckpoint(check.checkpoint);
 							}
 						}

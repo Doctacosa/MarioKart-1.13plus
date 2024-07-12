@@ -5,7 +5,7 @@
     <artifactId>MK</artifactId>
     <name>MarioKart</name>
     <description>The MarioKart bukkit plugin found at http://dev.bukkit.org/bukkit-plugins/MarioKart</description>
-    <version>1.13plus-1.6.5</version>
+    <version>1.13plus-1.6.7</version>
     <packaging>jar</packaging>
     <url>https://github.com/Jakllp/MarioKart-1.13plus</url>
     <issueManagement>
@@ -39,6 +39,10 @@
       <repository>
         <id>jitpack.io</id>
         <url>https://jitpack.io</url>
+      </repository>
+      <repository>
+        <id>jakl-repo</id>
+        <url>https://repo.jakllp.com/snapshots</url>
       </repository>
     </repositories>
 
@@ -120,9 +124,13 @@
         <version>3.1.0</version>
       </dependency>
       <dependency>
-        <groupId>net.milkbowl.vault</groupId>
-        <artifactId>Vault</artifactId>
-        <version>LATEST</version>
+        <!-- http://dev.bukkit.org/bukkit-plugins/vault/ -->
+        <groupId>org.natrolite</groupId>
+        <artifactId>vault-api</artifactId>
+        <version>1.7</version>
+        <type>jar</type>
+        <scope>provided</scope>
+        <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>com.github.Jakllp</groupId>
