@@ -150,10 +150,10 @@ public class MarioKart extends JavaPlugin {
 	public void onEnable() {
 		System.gc();
 		
-		Pattern pattern = Pattern.compile(".v(.*?)_R");		//Get MC-Version
-		Matcher matcher = pattern.matcher(Bukkit.getServer().getClass().getPackage().getName());
+		Pattern pattern = Pattern.compile("(.*?)-R");		//Get MC-Version
+		Matcher matcher = pattern.matcher(Bukkit.getServer().getBukkitVersion());
 		if(matcher.find()) {
-			String[] MCVersionStr = matcher.group(1).split("_");
+			String[] MCVersionStr = matcher.group(1).split("\\.");
 			for(String s:MCVersionStr) {
 				MCVersion.add(Integer.parseInt(s));
 			}
