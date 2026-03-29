@@ -98,7 +98,7 @@ public class RPManager {
 		}
 		
 		//Follow the server's redirect until we reach the .zip file
-		URLConnection c = new URL("https://media.forgecdn.net/files/3424/509/empty.zip").openConnection();
+		URLConnection c = new URL("https://downloads.creeperslab.net/resourcepacks/empty.zip").openConnection();
 		c.connect();
 		InputStream is = c.getInputStream();
 		String rURL = c.getURL().toExternalForm();
