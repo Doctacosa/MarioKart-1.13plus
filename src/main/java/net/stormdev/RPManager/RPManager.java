@@ -93,9 +93,12 @@ public class RPManager {
 	private static String getURLEmpty() throws IOException{
 		MarioKart.logger.info("Attempting to resolve Emtpy-Pack URL... (This may take a while)");
 		
+		//This checks fails on MC 26.2+
+		/*
 		if(MarioKart.MCVersion.get(0) == 1 && MarioKart.MCVersion.get(1) < 17) {
 			return "https://www.google.de";
 		}
+		*/
 		
 		//Follow the server's redirect until we reach the .zip file
 		URLConnection c = new URL("https://downloads.creeperslab.net/resourcepacks/empty.zip").openConnection();
