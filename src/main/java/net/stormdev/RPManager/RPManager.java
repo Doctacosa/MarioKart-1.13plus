@@ -13,7 +13,7 @@ public class RPManager {
 	private static final String fallbackURL = "https://media.forgecdn.net/files/3424/662/mariocart.zip"; //Current one at time of writing
 	//http://minecraft.curseforge.com/texture-packs/74301-mario-kart-resource-pack/files/774770/download
 	
-	private static final String fallbackEmpty = "https://media.forgecdn.net/files/3424/509/empty.zip";
+	private static final String fallbackEmpty = "https://downloads.creeperslab.net/resourcepacks/empty.zip";
 	/*
 	 * Get's the latest RP url from CurseForge... (I wish they extended their API to include RPs...)
 	 * 
